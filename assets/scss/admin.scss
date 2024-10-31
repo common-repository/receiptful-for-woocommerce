@@ -1,0 +1,180 @@
+.conversio-widgets-wrap {
+	position: relative;
+	min-width: 255px;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	background: #fff;
+
+	// Columns
+
+	.column {
+		position: relative;
+		padding: 0 10px;
+		overflow: hidden;
+		vertical-align: middle;
+	}
+	.column-shortcode {
+		//width: 250px
+	}
+	.column-location {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		flex: 1 1 auto;
+		justify-content: space-between;
+
+		input {
+			margin-left: 0.75rem !important;
+		}
+		select, input {
+			width: 10px !important; // Min width before wrap
+			flex: 1 1 auto;
+			//margin: 0 15px 15px 0 !important;
+		}
+	}
+	.column-priority {
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: row;
+		align-items: flex-start;
+
+		input[type="checkbox"] {
+			margin: 8px 0 0;
+
+			&:checked { display: none; }
+
+			&:checked ~ input {
+				height: 32px;
+				display: block !important;
+			}
+		}
+	}
+	.column-delete {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		padding-left: 0 !important;
+
+		a {
+			height: 32px;
+			line-height: 32px;
+		}
+	}
+
+	// Header
+	.conversio-widgets-list-header {
+		padding: 10px 0;
+		font-weight: bold;
+		border-bottom: 1px solid #eee;
+	}
+
+	// Individual widgets
+	.conversio-widget {
+		padding: 10px 0;
+
+		.delete {
+			visibility: hidden;
+			color: #a00;
+
+			&:hover {
+				color: #f00;
+				text-decoration: none;
+			}
+		}
+
+		&:hover {
+
+			.delete {
+				visibility: visible;
+			}
+		}
+		input,
+		input[type=text],
+		input[type=number],
+		select {
+			width: auto;
+			max-width: 100%;
+		}
+	}
+
+	// Footer
+	.conversio-widgets-footer {
+		background: #f5f5f5;
+		border-top: 1px solid #ddd;
+		padding: 12px;
+		margin-top: -1px;
+		text-align: right;
+	}
+
+	// Responsive
+
+	@media (max-width: 1000px) {
+
+		.conversio-widget {
+			padding: 0;
+		}
+		.column-location {
+			//display: none;
+			flex-wrap: wrap;
+			flex-direction: column;
+
+			select, input {
+				width: auto !important;
+				margin: 0 0 15px 0 !important;
+			}
+		}
+	}
+}
+
+
+.conversio-widgets-wrap {
+	display: grid;
+	margin: 0 auto;
+	align-items: top;
+
+	//@media (max-width: 800px) {
+	//	grid-row-gap: 1.4rem;
+	//}
+
+	.conversio-widget, .conversio-widgets-list-header {
+		display: grid;
+		grid-template-columns: 4fr 8fr 100px 55px;
+
+		//@media (max-width: 800px) {
+		//	grid-template-columns: 3fr 1fr 3fr;
+		//}
+		//
+		//@media (max-width: 400px) {
+		//	grid-template-columns: 1fr 1fr;
+		//}
+	}
+
+	.column {
+		padding: 0.75rem;
+		//@media (max-width: 800px) {
+		//	padding: 0 0 1rem 0;
+		//	text-align: center;
+		//}
+		//
+		//@media (max-width: 800px) {
+		//	&:before {
+		//		content: attr(data-title);
+		//		font-weight: bold;
+		//		display: block;
+		//		padding: 0.75rem;
+		//		margin-bottom: 0.75rem;
+		//	}
+		//	&:first-child {
+		//		grid-column-start: 1;
+		//		grid-column-end: 5;
+		//	}
+		//}
+		//
+		//@media (max-width: 400px) {
+		//	&:last-child {
+		//		grid-column-start: 1;
+		//		grid-column-end: 5;
+		//	}
+		//}
+	}
+}
